@@ -1,11 +1,13 @@
 #!/bin/bash
 
+#creating a bash script to allow the user to execute multiple commands
 #create variables before main body
 
 
 
-select option in "List Files" "Show free disk space" "Show system path" "Display command history" "Backup Files" "Exit"
+
 do
+    select option in "List Files" "Show free disk space" "Show system path" "Display command history" "Backup Files" "Exit"
 
     case $option in
         "List Files")
@@ -13,15 +15,19 @@ do
             ls;;
         "Show free disk space")
             echo -e "Showing free disk space";
-            ;;
+            df -h;;
         "Show system path")
             echo -e "System Path: $PATH";;
         "Display command history")
             echo -e "Displaying command history";
-            ;;
+            cat ~/.bash_history;;
         "Backup Files")
-            ;;
+           read -p "Enter directory name to backup: " directory
+           mkdir BackUp
+           cp -r $directory BackUp
+           ls BackUp;;
         "Exit")
             echo -e "Exiting Script";
             break;;
-while $option != 6
+    esac
+done
