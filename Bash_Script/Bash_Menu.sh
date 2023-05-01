@@ -1,7 +1,6 @@
 #!/bin/bash
 #exports the bash script so that it can be executed from any directory
-export PATH = "$PATH:/workspaces/OS-YR-1/Bash_Script"
-
+export PATH = "$PATH:/workspaces/OS-YR-1/Bash_Script/Bash_Menu.sh"
 
 set -o history
 #creating a bash script to allow the user to execute multiple commands
@@ -33,9 +32,9 @@ do
             history;; #shows the command history
         5)
            read -p "Enter directory name to backup: " directory
-           mkdir BackUp
-           cp -r $directory BackUp
-           ls BackUp;; #backs up a directory including all of its files
+           mkdir BackupFolder
+           cp -r $directory BackupFolder
+           ls BackupFolder;; #backs up a directory including all of its files
         6)
             echo -e "Exiting Script";
             break;; #exits the script, ends the program
