@@ -1,6 +1,5 @@
 #!/bin/bash
 #exports the bash script so that it can be executed from any directory
-export PATH = "$PATH:/workspaces/OS-YR-1/Bash_Script/Bash_Menu.sh"
 
 set -o history
 #creating a bash script to allow the user to execute multiple commands
